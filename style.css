@@ -46,7 +46,7 @@ ul {
   margin: auto;
 }
 
-.newsContainer{
+.artsContainer{
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
@@ -54,20 +54,20 @@ ul {
   justify-content: space-between;
 }
 
-.newsBox{
+.artsBox{
   display: flex;
   flex-direction: column;
   width: 45%;
 }
 
-.newsBox > img{
+.artsBox > img{
   border-radius: 20px;
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
-.newsBox a{
+.artsBox a{
   color: gold;
 }
 
@@ -76,7 +76,7 @@ ul {
   float: right;
 }
 
-.readNews {
+.readArts {
   width: 100%;
   margin-bottom: 30px;
   border-radius: 20px;
@@ -162,14 +162,6 @@ section{
     border: 0;
 }
 
-/* table{
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 5px;
-    display: flex;
-    width: auto;
-    padding: 0;
-  font-size: 1.2rem;
-} */
 
 td{
 
