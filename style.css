@@ -1,0 +1,266 @@
+/* =============================================================================== */
+body {
+  margin:0;
+  font-family: Arial; 
+  background-color: #141414;
+  }
+h2 {
+  font-family: monospace;
+  color: white;
+  
+}
+
+/* HEADER =================================================================== */
+
+/* NAVMENU =================================================== */
+nav {
+  width: 100%;
+  margin: auto;
+  padding: auto;
+}
+ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+
+.topmenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.topmenu > li {
+  display: inline-block;
+  position: relative;
+  width: 10%;
+  padding: auto;
+  text-align: center;
+}
+.topmenu > li:last-child {
+  margin-right: 0;
+}
+
+.divBox{
+  width: 55%;
+  margin: auto;
+}
+
+.newsContainer{
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.newsBox{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.newsBox > img{
+  border-radius: 20px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.newsBox a{
+  color: gold;
+}
+
+.pull-right{
+  padding:20px;
+  float: right;
+}
+
+.readNews {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  outline: none;
+ 
+  transition: .5s linear;
+  
+}
+.fa {
+  font-family: "FontAwesome";
+  color: inherit;
+  padding-left: 10px;
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: auto;
+  z-index: 10;
+  transition: 0.5s ease-in-out;
+  text-align: center;
+}
+.one ul {
+  background: #0028ab;
+}
+.one ul a {
+  color: white;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.one ul a:hover {
+  color: gold;
+  transition: 0.3s;
+  text-decoration: underline;
+}
+.one .submenu {
+  display: none;
+  background: #023fc4;
+}
+.one ul li:hover .submenu {
+  display: block;
+}
+.logo{
+  width: auto;
+  color: white;
+  font-size: 1.2em;
+        margin-left: 15%;
+}
+
+.submenuunit{
+    height: auto;
+    width: 100%;
+}
+
+section{
+    padding: 2%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.search{
+    margin-left: 250px;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    width: auto;
+}
+
+.searchbar{
+    height: 25px;
+    margin-bottom: 3px;
+    width: 300px;
+    border-radius: 4px;
+    padding: 2px;
+    border: 0;
+}
+
+/* table{
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    width: auto;
+    padding: 0;
+  font-size: 1.2rem;
+} */
+
+td{
+
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+tr{
+    border: 1px solid #023fc4;
+    padding: 0;
+    color: white;
+}
+
+th{
+    color: white;
+    background-color: #023fc4;
+    padding: 20px;
+    margin: 0;
+}
+
+.comment{
+  width: 80%;
+  text-align: left;
+}
+
+.commentTitle{
+  text-align: left;
+}
+
+.btn{
+   background-color: #43E16F;
+   border-radius: 3px;
+   margin-left: 10px;
+   height: 30px;
+   border: 0;
+   color: white;
+   font-weight: 600;
+}
+
+form{
+  color: white;
+}
+
+.submitBtn{
+  color: white;
+  background-color: #023fc4;
+  border-radius: 5px;
+  border: #2156c7 solid 1px;
+  padding: 5px 10px;
+}
+
+.submitBtn:hover{
+  background-color: #2156c7;
+  border: #023fc4 solid 1px;
+}
+
+p{
+    word-wrap: break-word;
+    display: flex;
+  font-size: 1.2rem;
+  color: white;
+}
+
+hr{
+  border: grey solid 1px;
+}
+
+h1{
+  color: white;
+  font-weight: bold;
+  width: auto;
+  display: inline-block;
+}
+
+.courselink{
+    color: black;
+    font-weight: 550;
+}
+
+.courselink:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+.control{
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+th{
+    text-align: center;
+}
