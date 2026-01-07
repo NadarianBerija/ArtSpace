@@ -20,7 +20,7 @@ class Controller {
         include_once 'view/catnews.php';
     }
 
-    public static function NewsByID($id) {
+    public static function ArtsByID($id) {
         $n = Arts::getArtByid($id);
         include_once 'view/readnews.php';
     }
@@ -29,5 +29,24 @@ class Controller {
         include_once 'view/error404.php';
     }
 
+    public static function InsertComment($c, $id) {
+        Comments::InsertComment($c, $id);
+        header('Location:arts?id='.$id.'#ctable');
+    }
+
+    public static function Comments($artid) {
+        $arr = Comments::getCommentByArtID($artid);
+        ViewComments::CommentsByArt($arr);
+    }
+
+    public static function CommentsCount($artid) {
+        $arr = Comments::getCommentsCountByArtID($artid);
+        ViewComments::CommentsCount($arr);
+    }
+
+    public static function CommentsCountWithAncor($artid) {
+        $arr = Comments::getCommentsCountByArtID($artid);
+        ViewComments::CommentsCountWithAncor($arr);
+    }
 }
 ?>
