@@ -12,17 +12,17 @@ class Controller {
 
     public static function AllArts() {
         $arr = Arts::getAllArts();
-        include_once 'view/allnews.php';
+        include_once 'view/allarts.php';
     }
 
     public static function ArtsByCatID($id) {
         $arr = Arts::getArtsByCategoryID($id);
-        include_once 'view/catnews.php';
+        include_once 'view/catarts.php';
     }
 
     public static function ArtsByID($id) {
         $n = Arts::getArtByid($id);
-        include_once 'view/readnews.php';
+        include_once 'view/watchart.php';
     }
 
     public static function error404() {
