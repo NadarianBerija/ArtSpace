@@ -15,7 +15,15 @@ elseif($path == 'category' and isset($_GET['id'])) {
 elseif($path == 'art' and isset($_GET['id'])) {
     $response = Controller::ArtsByID($_GET['id']);
 }
-
+elseif($path == 'insertcomment' and isset($_GET['comment'], $_GET['id'])) {
+    $response = Controller::InsertComment($_GET['comment'], $_GET['id']);
+}
+elseif ($path == 'registerForm') {
+    $response = Controller::registerForm();
+}
+elseif ($path == 'registerAnswer') {
+    $response = Controller::registerUser();
+}
 else{
     $response = Controller::error404();
 }
