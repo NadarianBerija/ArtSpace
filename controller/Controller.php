@@ -48,5 +48,14 @@ class Controller {
         $arr = Comments::getCommentsCountByArtID($artid);
         ViewComments::CommentsCountWithAncor($arr);
     }
+
+    public static function registerForm() {
+        include_once('view/formRegister.php');
+    }
+    
+    public static function registerUser() {
+        $result = Register::registerUser();
+        include_once('view/answerRegister.php');
+    }
 }
 ?>
