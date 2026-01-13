@@ -31,7 +31,7 @@ class Controller {
 
     public static function InsertComment($c, $id) {
         Comments::InsertComment($c, $id);
-        header('Location:arts?id='.$id.'#ctable');
+        header('Location:art?id='.$id.'#ctable');
     }
 
     public static function Comments($artid) {

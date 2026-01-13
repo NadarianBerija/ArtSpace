@@ -2,7 +2,7 @@
 class controllerAdminArts{
     public static function ArtsList() {
         $arr = modelAdminArts::getArtsList();
-        include_once 'viewAdmin/newsList.php';
+        include_once 'viewAdmin/artsList.php';
     }
 }
 ?>

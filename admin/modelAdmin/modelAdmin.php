@@ -21,7 +21,7 @@ class modelAdmin {
                         if ($loginEmail == $item['email'] && password_verify($password, $item['password'])) {
                             $_SESSION['sessionId'] = session_id();
                             $_SESSION['userId'] = $item['id'];
-                            $_SESSION['name'] = $item['name'];
+                            $_SESSION['name'] = $item['username'];
                             $_SESSION['status'] = $item['status'];
                             $logIn = true;
                         }
