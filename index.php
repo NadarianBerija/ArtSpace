@@ -4,6 +4,7 @@ include_once 'inc/Database.php';
 require 'model/Category.php';
 require 'model/Arts.php';
 require 'model/Comments.php';
+require 'model/Register.php';
 
 include_once 'view/arts.php';
 include_once 'view/comments.php';
