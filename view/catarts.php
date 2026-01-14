@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1>Arts (category)</h1>
+<h1><?= __('arts_categories') ?></h1>
 <br>
 <div class="artsContainer">
 <?php

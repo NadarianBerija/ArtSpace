@@ -12,16 +12,17 @@
 
     <nav class="one">
         <ul class="topmenu">
-            <li><a href="#">Categories<i class="fa fa-angle-down"></i></a>
+            <li><a href="#"><?= __('categories') ?><i class="fa fa-angle-down"></i></a>
                 <ul class="submenu">
                     <?php
                         Controller::AllCategory();
                     ?>
                 </ul>
             </li>
-            <li><a href="testError">Info</a></li>
-            <li><a href="./">Home page</a></li>
-            <li><a href="registerForm">Registration</a></li>
+            <li><a href="testError"><?= __('info') ?></a></li>
+            <li><a href="./"><?= __('home_page') ?></a></li>
+            <li><a href="registerForm"><?= __('registration') ?></a></li>
+            <li><a href="<?= langLink('eng') ?>">ENG</a> | <a href="<?= langLink('est') ?>">EST</a></li>
         </ul>
     </nav>
 
