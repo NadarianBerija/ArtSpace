@@ -45,6 +45,7 @@ class Controller {
     }
 
     public static function CommentsCountWithAncor($artid) {
+        if (!$artid) return;
         $arr = Comments::getCommentsCountByArtID($artid);
         ViewComments::CommentsCountWithAncor($arr);
     }

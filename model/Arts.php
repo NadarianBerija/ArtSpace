@@ -1,28 +1,36 @@
 <?php
 class Arts{
     public static function getLast3Arts() {
-        $query = "SELECT * FROM arts ORDER BY id DESC LIMIT 3";
+        $lang = getLang();
+
+        $query = "SELECT * FROM arts a JOIN art_translations atran ON atran.art_id = a.id WHERE atran.lang = '$lang' ORDER BY a.id DESC LIMIT 3";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getAllArts() {
-        $query = "SELECT * FROM arts ORDER BY id DESC";
+        $lang = getLang();
+
+        $query = "SELECT * FROM arts a JOIN art_translations atran ON atran.art_id = a.id WHERE atran.lang = '$lang' ORDER BY a.id DESC";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getArtsByCategoryID($id) {
-        $query = "SELECT * FROM arts where category_id=".(string)$id." ORDER BY id DESC";
+        $lang = getLang();
+
+        $query = "SELECT * FROM arts a JOIN art_translations atran ON atran.art_id = a.id WHERE a.category_id=".(int)$id." AND atran.lang = '$lang' ORDER BY a.id DESC";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getArtByid($id) {
-        $query = "SELECT * FROM arts where id=".(string)$id;
+        $lang = getLang();
+
+        $query = "SELECT * FROM arts a JOIN art_translations atran ON atran.art_id = a.id WHERE a.id=".(int)$id." AND atran.lang = '$lang' LIMIT 1";
         $db = new Database();
         $n = $db->getOne($query);
         return $n;
