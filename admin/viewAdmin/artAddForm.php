@@ -26,12 +26,20 @@ ob_start();
         <form method="POST" action="artAddResult" enctype="multipart/form-data">
             <table class="table table-bordered">
                 <tr>
-                    <td>Art title</td>
-                    <td><input type="text" name="title" class="form-control" required></td>
+                    <td>Art title (eng)</td>
+                    <td><input type="text" name="title_eng" class="form-control" required></td>
                 </tr>
                 <tr>
-                    <td>Art text</td>
-                    <td><textarea rows="5" name="text" class="form-control" required></textarea></td>
+                    <td>Art text (eng)</td>
+                    <td><textarea rows="5" name="text_eng" class="form-control" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>Art title (est)</td>
+                    <td><input type="text" name="title_est" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Art text (est)</td>
+                    <td><textarea rows="5" name="text_est" class="form-control" required></textarea></td>
                 </tr>
                 <tr>
                     <td>Category</td>

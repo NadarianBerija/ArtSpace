@@ -57,4 +57,8 @@ class database {
         $response = $this->conn->exec($query);
         return $response;
     }
+
+    public function lastInsertId() {
+        return $this->conn->lastInsertId();
+    }
 }

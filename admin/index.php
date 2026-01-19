@@ -1,6 +1,9 @@
 <?php
 session_start();
     require_once '../inc/database.php';
+    require_once '../inc/lang.php';
+    require_once '../inc/session.php';
+
     include_once("modelAdmin/modelAdmin.php");
     include_once("modelAdmin/modelAdminArts.php");
     include_once("modelAdmin/modelAdminCategory.php");
