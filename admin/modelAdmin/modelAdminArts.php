@@ -45,40 +45,41 @@ class modelAdminArts{
 
     // art detail id
     public static function getArtDetail($id) {
-        $lang = getLang();
-        $query = "SELECT arts.*, category.name,users.username from arts, category,users WHERE arts.category_id=category.id AND arts.user_id=users.id and arts.id=".$id;
         $db = new Database();
 
-        if ($lang === 'eng') {
-            $query = "
-                SELECT arts.*, category.name AS category_name, users.username
-                FROM arts
-                JOIN category ON arts.category_id = category.id
-                JOIN users    ON arts.user_id = users.id
-                WHERE arts.id = ".(int)$id."
-            ";
-            $arr = $db->getOne($query);
-        } else {
-        
-            $query = "
-                SELECT al.title, al.text, arts.picture, category.name AS category_name, users.username
-                FROM arts
-                JOIN category ON arts.category_id = category.id
-                JOIN users    ON arts.user_id = users.id
-                LEFT JOIN arts_lang al ON al.art_id = arts.id AND al.lang = '$lang'
-                WHERE arts.id = ".(int)$id."
-            ";
-            $arr = $db->getOne($query);
+        $query = "
+            SELECT 
+                arts.id,
+                arts.picture,
+                arts.category_id,
+                category.name AS category_name,
+                users.username,
 
-            if (!$arr['title'] || !$arr['text']) {
-            $fallback = $db->getOne("
-                SELECT title, text
-                FROM arts_lang
-                WHERE art_id = ".(int)$id." AND lang = 'eng'
-            ");
-            $arr['title'] = $fallback['title'];
-            $arr['text']  = $fallback['text'];
-        }
+                eng.title AS title_eng,
+                eng.text  AS text_eng,
+
+                est.title AS title_est,
+                est.text  AS text_est
+
+            FROM arts
+            JOIN category ON arts.category_id = category.id
+            JOIN users    ON arts.user_id = users.id
+
+            LEFT JOIN arts_lang eng 
+                ON eng.art_id = arts.id AND eng.lang = 'eng'
+
+            LEFT JOIN arts_lang est 
+                ON est.art_id = arts.id AND est.lang = 'est'
+
+            WHERE arts.id = ".(int)$id."
+        ";
+
+        $arr = $db->getOne($query);
+
+        // fallback если нет перевода EST
+        if (empty($arr['title_est'])) {
+            $arr['title_est'] = $arr['title_eng'];
+            $arr['text_est']  = $arr['text_eng'];
         }
 
         return $arr;
@@ -88,43 +89,71 @@ class modelAdminArts{
     public static function getArtEdit($id) {
         $test=false;
         if(isset($_POST['save'])) {
-            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])) {
-                $title = $_POST['title'];
-                $text = $_POST['text'];
+            if(!empty($_POST['title_eng']) && !empty($_POST['text_eng']) && !empty($_POST['title_est']) && !empty($_POST['text_est']) && !empty($_POST['idCategory'])) {
+                $titleEng = $_POST['title_eng'];
+                $textEng = $_POST['text_eng'];
+                $titleEst = $_POST['title_est'];
+                $textEst = $_POST['text_est'];
                 $idCategory = $_POST['idCategory'];
 
-                $image = $_FILES['picture']['name'];
-                if($image != "") {
-                    $image = addslashes(file_get_contents($_FILES['picture']['tmp_name']));
-                }
+                if (!empty($_FILES['picture']['tmp_name'])) {
+                $image = addslashes(file_get_contents($_FILES['picture']['tmp_name']));
+                $sql = "
+                    UPDATE arts 
+                    SET title='$titleEng', text='$textEng', picture='$image', category_id='$idCategory'
+                    WHERE id=".(int)$id;
+            } else {
+                $sql = "
+                    UPDATE arts 
+                    SET title='$titleEng', text='$textEng', category_id='$idCategory'
+                    WHERE id=".(int)$id;
+            }
 
-                if($image="") {
-                    $sql = "UPDATE `arts` SET `title` = '$title', 'text' = '$text', `category_id` = '$idCategory' WHERE `arts`.`id` = ".$id;
-                } else {
-                    $sql = "UPDATE `arts` SET `title` = '$title', `text` = '$text', `picture` = '$image', `category_id` = '$idCategory' WHERE `arts`.`id` = ".$id;
-                }
-                $db = new Database();
-                $item = $db->executeRun($sql);
-                if($item == true) {
-                    $test = true;
-                }
+            $db = new Database();
+            $item = $db->executeRun($sql);
+
+            if ($item) {
+                
+                $db->executeRun("
+                    UPDATE arts_lang 
+                    SET title='$titleEng', text='$textEng'
+                    WHERE art_id=".(int)$id." AND lang='eng'
+                ");
+
+                $db->executeRun("
+                    UPDATE arts_lang 
+                    SET title='$titleEst', text='$textEst'
+                    WHERE art_id=".(int)$id." AND lang='est'
+                ");
+
+                $test = true;
             }
         }
-        return $test;
     }
+    return $test;
+}
 
     // art delete
     public static function getArtDelete($id) {
         $test = false;
-        if(isset($_POST['save'])) {
-            $sql = "DELETE FROM `arts` WHERE `arts`.`id` = ".$id;
-            $db = new Database();
-            $item = $db->executeRun($sql);
-            if($item == true) {
-                $test = true;
-            }
+        if (isset($_POST['save'])) {
+        $db = new Database();
+
+        $db->executeRun("
+            DELETE FROM arts_lang 
+            WHERE art_id=".(int)$id
+        );
+
+        $item = $db->executeRun("
+            DELETE FROM arts 
+            WHERE id=".(int)$id
+        );
+
+        if ($item) {
+            $test = true;
         }
-        return $test;
+    }
+    return $test;
     }
 }
 

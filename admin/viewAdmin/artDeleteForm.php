@@ -26,12 +26,20 @@ ob_start();
         <form method="POST" action="artDelResult?id=<?php echo $id; ?>" enctype="multipart/form-data">
             <table class="table table-bordered">
                 <tr>
-                    <td>Art title</td>
-                    <td><input type="text" name="title" class="form-control" required value=<?php echo $detail['title']; ?> readonly></td>
+                    <td>Art title (eng)</td>
+                    <td><input type="text" name="title_eng" class="form-control" required value=<?php echo $detail['title_eng']; ?> readonly></td>
                 </tr>
                 <tr>
-                    <td>Art text</td>
-                    <td><textarea rows="5" name="text" class="form-control" required readonly><?php echo $detail['text']; ?></textarea></td>
+                    <td>Art text (eng)</td>
+                    <td><textarea rows="5" name="text_eng" class="form-control" required readonly><?php echo $detail['text_eng']; ?></textarea></td>
+                </tr>
+                <tr>
+                    <td>Art title (est)</td>
+                    <td><input type="text" name="title_est" class="form-control" required value=<?php echo $detail['title_est']; ?> readonly></td>
+                </tr>
+                <tr>
+                    <td>Art text (est)</td>
+                    <td><textarea rows="5" name="text_est" class="form-control" required readonly><?php echo $detail['tex_est']; ?></textarea></td>
                 </tr>
                 <tr>
                     <td>Category</td>
