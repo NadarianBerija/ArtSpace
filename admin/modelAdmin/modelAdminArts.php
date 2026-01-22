@@ -29,10 +29,10 @@ class modelAdminArts{
             if($item) {
                 $artId = $db->lastInsertId();
 
-                $sqlEng = "INSERT INTO art_translations (art_id, lang, title, text) VALUES ('$artId', 'eng', '$titleEng', '$textEng')";
+                $sqlEng = "INSERT INTO arts_lang (art_id, lang, title, text) VALUES ('$artId', 'eng', '$titleEng', '$textEng')";
                 $db->executeRun($sqlEng);
 
-                $sqlEst = "INSERT INTO art_translations (art_id, lang, title, text) VALUES ('$artId', 'est', '$titleEst', '$textEst')";
+                $sqlEst = "INSERT INTO arts_lang (art_id, lang, title, text) VALUES ('$artId', 'est', '$titleEst', '$textEst')";
                 $db->executeRun($sqlEst);
 
                 $test = true;
@@ -65,7 +65,7 @@ class modelAdminArts{
                 FROM arts
                 JOIN category ON arts.category_id = category.id
                 JOIN users    ON arts.user_id = users.id
-                LEFT JOIN art_translations al ON al.art_id = arts.id AND al.lang = '$lang'
+                LEFT JOIN arts_lang al ON al.art_id = arts.id AND al.lang = '$lang'
                 WHERE arts.id = ".(int)$id."
             ";
             $arr = $db->getOne($query);
@@ -73,7 +73,7 @@ class modelAdminArts{
             if (!$arr['title'] || !$arr['text']) {
             $fallback = $db->getOne("
                 SELECT title, text
-                FROM art_translations
+                FROM arts_lang
                 WHERE art_id = ".(int)$id." AND lang = 'eng'
             ");
             $arr['title'] = $fallback['title'];
