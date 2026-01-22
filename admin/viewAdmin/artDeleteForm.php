@@ -39,7 +39,7 @@ ob_start();
                 </tr>
                 <tr>
                     <td>Art text (est)</td>
-                    <td><textarea rows="5" name="text_est" class="form-control" required readonly><?php echo $detail['tex_est']; ?></textarea></td>
+                    <td><textarea rows="5" name="text_est" class="form-control" required readonly><?php echo $detail['text_est']; ?></textarea></td>
                 </tr>
                 <tr>
                     <td>Category</td>
