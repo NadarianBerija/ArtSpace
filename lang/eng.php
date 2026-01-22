@@ -2,7 +2,7 @@
 
 return [
     'info' => 'Info',
-    'home_page' => 'Home page',
+    'home_page' => 'Home',
     'categories' => 'Categories',
     'registration' => 'Registration',
     'all_arts' => 'All arts',

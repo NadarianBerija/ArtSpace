@@ -22,7 +22,21 @@
             <li><a href="testError"><?= __('info') ?></a></li>
             <li><a href="./"><?= __('home_page') ?></a></li>
             <li><a href="registerForm"><?= __('registration') ?></a></li>
-            <li><a href="<?= langLink('eng') ?>">ENG</a> | <a href="<?= langLink('est') ?>">EST</a></li>
+            <li class="lang-menu">
+                <a href="#"><?= strtoupper(getLang()) ?><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu">
+                    <?php 
+                    $languages = ['eng' => 'ENG', 'est' => 'EST'];
+                    $current = getLang();
+                    foreach ($languages as $code => $label) {
+                        if ($code !== $current) {
+                            echo '<li><a href="'.langLink($code).'">'.$label.'</a></li>';
+                        }
+                    }
+                    ?>
+                </ul>
+            </li>
+            
         </ul>
     </nav>
 
