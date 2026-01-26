@@ -58,5 +58,9 @@ class Controller {
         $result = Register::registerUser();
         include_once('view/answerRegister.php');
     }
+
+    public static function info() {
+        include_once('view/info.php');
+    }
 }
 ?>

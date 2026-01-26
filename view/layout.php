@@ -12,6 +12,7 @@
 
     <nav class="one">
         <ul class="topmenu">
+            <li><a href="./"><?= __('home_page') ?></a></li>
             <li><a href="#"><?= __('categories') ?><i class="fa fa-angle-down"></i></a>
                 <ul class="submenu">
                     <?php
@@ -19,8 +20,7 @@
                     ?>
                 </ul>
             </li>
-            <li><a href="testError"><?= __('info') ?></a></li>
-            <li><a href="./"><?= __('home_page') ?></a></li>
+            <li><a href="info"><?= __('info') ?></a></li>
             <li><a href="registerForm"><?= __('registration') ?></a></li>
             <li class="lang-menu">
                 <a href="#"><?= strtoupper(getLang()) ?><i class="fa fa-angle-down"></i></a>

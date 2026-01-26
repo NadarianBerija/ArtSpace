@@ -24,6 +24,9 @@ elseif ($path == 'registerForm') {
 elseif ($path == 'registerAnswer') {
     $response = Controller::registerUser();
 }
+elseif ($path == 'info') {
+    $response = Controller::info();
+}
 else{
     $response = Controller::error404();
 }
