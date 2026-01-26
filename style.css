@@ -1,261 +1,344 @@
-/* =============================================================================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  font-family: Arial; 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('public/img/abstract.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-h2 {
-  font-family: monospace;
-  color: white;
-  
-}
-
-/* HEADER =================================================================== */
-
-/* NAVMENU =================================================== */
-nav {
-  width: 100%;
-  margin: auto;
-  padding: auto;
-}
-ul {
-  list-style: none; 
   margin: 0;
-  padding: 0;
+  font-family: "Noto Serif", Georgia, serif;
+  background: #f6f6f4;
+  color: #222;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 0.8rem 0;
+}
+
+p {
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+
+nav.one {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e2e2;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .topmenu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 25px;
+  list-style: none;
+}
+
+.topmenu::before {
+  content: "ArtSpace";
+  margin-right: auto;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #222;
 }
 
 .topmenu > li {
-  display: inline-block;
   position: relative;
-  width: 10%;
-  padding: auto;
-  text-align: center;
-}
-.topmenu > li:last-child {
-  margin-right: 0;
 }
 
-.divBox{
-  width: 55%;
-  margin: auto;
+.topmenu > li > a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  padding: 6px 4px;
 }
 
-.artsContainer{
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
+.topmenu > li > a:hover {
+  color: #8b5e3c;
 }
 
-.artsBox{
-  display: flex;
-  flex-direction: column;
-  width: 45%;
+.topmenu > li > .submenu {
+  display: block;        
+  position: absolute;
+  top: 130%;
+  left: 0;
+
+  min-width: 140px;    
+  padding: 6px 0;
+  margin: 0;
+
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;
 }
 
-.artsBox > img{
-  border-radius: 20px;
+.topmenu > li:hover > .submenu,
+.topmenu > li > .submenu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s;
+}
+
+.topmenu > li > .submenu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 10px;
+}
+
+.submenu {
+  list-style: none;
+}
+
+.submenuunit a {
+  display: block;
+  padding: 9px 14px;
+  font-size: 0.9rem;
+  color: #333;
+  white-space: nowrap;
+}
+
+.submenuunit a:hover {
+  background: #f1f1f1;
+}
+
+.lang-menu {
+  position: relative;
+}
+
+.lang-menu > .submenu {
+  display: block;
+  position: absolute;
+  top: 130%;
+  right: 0;  
+  left: auto;
+
+  min-width: 140px;
+  padding: 6px 0;
+  margin: 0;
+
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;
+}
+
+.lang-menu:hover > .submenu,
+.lang-menu > .submenu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s;
+}
+
+.lang-menu > .submenu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+
+.lang-menu .submenu li a {
+  display: block;
+  padding: 9px 14px;
+  font-size: 0.9rem;
+  color: #333;
+  white-space: nowrap;
+}
+
+.lang-menu .submenu li a:hover {
+  background: #f1f1f1;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.divBox {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.artsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.artsBox {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artsBox:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+}
+
+.artsBox img {
+  width: 100%;
+  height: 220px;
   object-fit: cover;
 }
 
-.artsBox a{
-  color: gold;
+.artsBox h2 {
+  padding: 0 18px;
 }
 
-.pull-right{
-  padding:20px;
-  float: right;
+.artsBox a {
+  margin: 10px 18px 18px;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #8b5e3c;
+}
+
+.artsBox a:hover {
+  text-decoration: underline;
 }
 
 .watchArt {
   width: 100%;
-  margin-bottom: 30px;
-  border-radius: 20px;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 14px;
+  margin: 25px 0;
+  background: #eee;
 }
 
-a {
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
-  outline: none;
- 
-  transition: .5s linear;
-  
+#ctable {
+  width: 100%;
+  margin-top: 40px;
+  border-collapse: collapse;
 }
-.fa {
-  font-family: "FontAwesome";
-  color: inherit;
-  padding-left: 10px;
-}
-.submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: auto;
-  z-index: 10;
-  transition: 0.5s ease-in-out;
-  text-align: center;
-}
-.one ul {
-  background: #0028ab;
-}
-.one ul a {
-  color: white;
+
+#ctable th {
+  background: #eee;
+  text-align: left;
+  padding: 12px;
   font-weight: 600;
-  font-size: 1.2em;
 }
 
-.one ul a:hover {
-  color: gold;
-  transition: 0.3s;
-  text-decoration: underline;
+#ctable td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
 }
-.one .submenu {
-  display: none;
-  background: #023fc4;
+
+.comment {
+  width: 75%;
 }
-.one ul li:hover .submenu {
-  display: block;
+
+.date {
+  font-size: 0.9rem;
+  color: #777;
 }
-.logo{
-  width: auto;
+
+form {
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.submitBtn {
+  background: #8b5e3c;
   color: white;
-  font-size: 1.2em;
-        margin-left: 15%;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  margin-left: 10px;
 }
 
-.submenuunit{
-    height: auto;
+.submitBtn:hover {
+  background: #6f482d;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-top: 60px;
+}
+
+body > p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .topmenu {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .topmenu::before {
     width: 100%;
-}
+    margin-bottom: 10px;
+  }
 
-section{
-    padding: 2%;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.search{
-    margin-left: 250px;
-    padding: 0;
-    display: flex;
-    flex-flow: row;
-    width: auto;
-}
-
-.searchbar{
-    height: 25px;
-    margin-bottom: 3px;
-    width: 300px;
-    border-radius: 4px;
-    padding: 2px;
-    border: 0;
-}
-
-
-td{
-
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-}
-
-tr{
-    border: 1px solid #023fc4;
-    padding: 0;
-    color: white;
-}
-
-th{
-    color: white;
-    background-color: #023fc4;
-    padding: 20px;
-    margin: 0;
-}
-
-.comment{
-  width: 80%;
-  text-align: left;
-}
-
-.commentTitle{
-  text-align: left;
-}
-
-.btn{
-   background-color: #43E16F;
-   border-radius: 3px;
-   margin-left: 10px;
-   height: 30px;
-   border: 0;
-   color: white;
-   font-weight: 600;
-}
-
-form{
-  color: white;
-}
-
-.submitBtn{
-  color: white;
-  background-color: #023fc4;
-  border-radius: 5px;
-  border: #2156c7 solid 1px;
-  padding: 5px 10px;
-}
-
-.submitBtn:hover{
-  background-color: #2156c7;
-  border: #023fc4 solid 1px;
-}
-
-p{
-    word-wrap: break-word;
-    display: flex;
-  font-size: 1.2rem;
-  color: white;
-}
-
-hr{
-  border: grey solid 1px;
-}
-
-h1{
-  color: white;
-  font-weight: bold;
-  width: auto;
-  display: inline-block;
-}
-
-.courselink{
-    color: black;
-    font-weight: 550;
-}
-
-.courselink:hover{
-    color: blue;
-    text-decoration: underline;
-}
-
-.control{
-    color: black;
-    margin: 0;
-    padding: 0;
-}
-
-th{
-    text-align: center;
+  .artsBox img {
+    height: 180px;
+  }
 }

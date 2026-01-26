@@ -6,7 +6,7 @@ return [
     'categories' => 'Kategooriad',
     'registration' => 'Registreerimine',
     'all_arts' => 'Kõik kunstid',
-    'arts_categories' => 'Kunstid (Kategooriad)',
+    'arts_categories' => 'Kunstid',
     'all' => 'Kõik',
     'your_comment' => 'Sinu kommentaar',
     'comments' => 'Kommentar',

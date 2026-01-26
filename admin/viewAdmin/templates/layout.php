@@ -26,14 +26,14 @@
                     <?php
                     echo '<ul class="nav nav-pills pull-right">
                     <li role="button">'.$_SESSION["name"].
-                    '<a href="logout" style="display: inline;">Log out <i class="fa fa-sign-out"></i>
+                    '<a href="logout" style="display: inline;"><span>Log out </span><i class="fa fa-sign-out"></i>
                     </a></li></ul>';
 
                     if (isset($_SESSION["status"]) && $_SESSION["status"]=="admin") {
                         echo '<h4><a href="../" target=_blank>Web site Arts portal</a>';
-                        echo ' &#187 <a href="./">Start admin </a>';
-                        echo ' &#187 <a href="categoryAdmin">Arts categories </a>';
-                        echo ' &#187 <a href="artsAdmin">Arts List</a>';
+                        echo ' <span>&#187</span> <a href="./">Start admin </a>';
+                        echo ' <span>&#187</span> <a href="categoryAdmin">Arts categories </a>';
+                        echo ' <span>&#187</span> <a href="artsAdmin">Arts List</a>';
                         echo ' </h4>';
                     }else{
                         echo '<h4>You have no rights!</h4>';
