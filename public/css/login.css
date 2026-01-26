@@ -1,0 +1,132 @@
+﻿body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: "Noto Serif", serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('public/img/abstract.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   FORM CONTAINER
+========================================================= */
+.form-signin {
+  max-width: 400px;
+  padding: 30px 25px;
+  margin: 0 auto;
+  background: rgba(0,0,50,0.7); /* темный полупрозрачный фон */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* =========================================================
+   FORM HEADING
+========================================================= */
+.form-signin .form-signin-heading {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: gold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+
+/* =========================================================
+   INPUT FIELDS
+========================================================= */
+.form-signin .form-control {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ffd700;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.form-signin .form-control:focus {
+  border-color: gold;
+  box-shadow: 0 0 10px rgba(255,215,0,0.5);
+  outline: none;
+}
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+.form-signin button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: gold;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-signin button:hover {
+  background-color: #ffd700cc;
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   LINKS AND MESSAGES
+========================================================= */
+.form-signin p {
+  font-size: 0.95rem;
+  color: #ffd700;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-signin p a {
+  color: gold;
+  text-decoration: none;
+}
+
+.form-signin p a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #8b5e3c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8b5e3c;
+  text-decoration: underline;
+}
+
+button {
+  background-color: #8b5e3c !important;
+  border: none !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 480px) {
+  .form-signin {
+    padding: 25px 15px;
+  }
+
+  .form-signin .form-signin-heading {
+    font-size: 1.5rem;
+  }
+
+  .form-signin .form-control {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .form-signin button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
