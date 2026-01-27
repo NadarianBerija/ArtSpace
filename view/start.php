@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1>TOP 3 ARTS</h1>
+<h1><?= __('new_arts') ?></h1>
 <br>
 <div class="artsContainer">
 <?php

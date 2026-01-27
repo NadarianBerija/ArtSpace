@@ -1,12 +1,12 @@
 <?php
 
 return [
+    'new_arts' => 'NEW ARTS',
     'info' => 'Info',
     'home_page' => 'Home',
     'categories' => 'Categories',
     'registration' => 'Registration',
     'all_arts' => 'All arts',
-    'arts_categories' => 'Arts',
     'all' => 'All',
     'your_comment' => 'Your comment',
     'comments' => 'Comments',
@@ -22,5 +22,6 @@ return [
         Here you will find a wide range of paintings, digital art, illustrations, and more. Regardless of style or genre, we believe every stroke and every detail deserves attention.
         <br><br>
         Join us and immerse yourself in the fascinating world of art, where your creativity can inspire others!',
-    'phone' => 'Phone'
+    'phone' => 'Phone',
+    'nothing' => 'Nothing found'
 ];

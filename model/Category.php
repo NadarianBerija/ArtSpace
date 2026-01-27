@@ -8,5 +8,14 @@ class Category{
         $arr = $db->getAll($query);
         return $arr;
     }
+
+    public static function getCategoryById($id) {
+        $lang = getLang();
+
+        $query = "SELECT c.id, cl.name FROM category c JOIN category_lang cl ON cl.cat_id = c.id WHERE c.id = '$id' AND cl.lang = '$lang' LIMIT 1";
+        $db = new Database();
+        $n = $db->getOne($query);
+        return $n;
+    }
 }
 ?>

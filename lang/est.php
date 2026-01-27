@@ -1,12 +1,12 @@
 <?php
 
 return [
+    'new_arts' => 'UUS KUNSTID',
     'info' => 'Info',
     'home_page' => 'Avaleht',
     'categories' => 'Kategooriad',
     'registration' => 'Registreerimine',
     'all_arts' => 'Kõik kunstid',
-    'arts_categories' => 'Kunstid',
     'all' => 'Kõik',
     'your_comment' => 'Sinu kommentaar',
     'comments' => 'Kommentar',
@@ -22,5 +22,6 @@ return [
         Siit leiad erinevaid maale, digitaalkunsti, illustratsioone ja palju muud. Olenemata stiilist või žanrist usume, et iga pintslitõmme ja iga detail väärib tähelepanu.
         <br><br>
         Liitu meiega ja sukeldu kunstimaailma, kus sinu loovus võib inspireerida teisi!',
-    'phone' => 'Telefon'
+    'phone' => 'Telefon',
+    'nothing' => 'Midagi ei leitud'
 ];

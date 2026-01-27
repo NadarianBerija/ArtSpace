@@ -17,6 +17,7 @@ class Controller {
 
     public static function ArtsByCatID($id) {
         $arr = Arts::getArtsByCategoryID($id);
+        $n = Category::getCategoryById($id);
         include_once 'view/catarts.php';
     }
 
