@@ -11,13 +11,13 @@ ob_start();
             {
         ?>
         <div class="alert alert-info">
-            <strong>Entry added. </strong><a href="artAdmin">Arts List</a>
+            <strong>Entry added. </strong><a href="artsAdmin">Arts List</a>
         </div>
         <?php
             } else if($test == false) {
         ?>
         <div class="alert alert-warning">
-            <strong>Error adding entry! </strong><a href="artAdmin">Arts List</a>
+            <strong>Error adding entry! </strong><a href="artsAdmin">Arts List</a>
         </div>
         <?php
             }
@@ -66,7 +66,7 @@ ob_start();
                         <button type="submit" class="btn btn-primary" name="save">
                             <span class="glyphicon glyphicon-plus"></span> Save
                         </button>
-                        <a href="artAdmin" class="btn btn-large btn-success">
+                        <a href="artsAdmin" class="btn btn-large btn-success">
                             <i class="glyphicon glyphicon-backward"></i> &nbsp;Back to list
                         </a>
                     </td>

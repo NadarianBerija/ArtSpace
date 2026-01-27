@@ -11,13 +11,13 @@ ob_start();
             {
         ?>
         <div class="alert alert-info">
-            <strong>The entry has been changed. </strong><a href="artAdmin">Arts List</a>
+            <strong>The entry has been changed. </strong><a href="artsAdmin">Arts List</a>
         </div>
         <?php
             } else if($test == false) {
         ?>
         <div class="alert alert-warning">
-            <strong>Error changing record! </strong><a href="artAdmin">Arts List</a>
+            <strong>Error changing record! </strong><a href="artsAdmin">Arts List</a>
         </div>
         <?php
             }
@@ -27,7 +27,7 @@ ob_start();
             <table class="table table-bordered">
                 <tr>
                     <td>Art title (eng)</td>
-                    <td><input type="text" name="title_eng" class="form-control" required value=<?php echo $detail['title_eng']; ?>></td>
+                    <td><input type="text" name="title_eng" class="form-control" required value="<?php echo $detail['title_eng']; ?>"></td>
                 </tr>
                 <tr>
                     <td>Art text (eng)</td>
@@ -35,7 +35,7 @@ ob_start();
                 </tr>
                 <tr>
                     <td>Art title (est)</td>
-                    <td><input type="text" name="title_est" class="form-control" required value=<?php echo $detail['title_est']; ?>></td>
+                    <td><input type="text" name="title_est" class="form-control" required value="<?php echo $detail['title_est']; ?>"></td>
                 </tr>
                 <tr>
                     <td>Art text (est)</td>
@@ -77,7 +77,7 @@ ob_start();
                         <button type="submit" class="btn btn-primary" name="save">
                             <span class="glyphicon glyphicon-plus"></span> Edit
                         </button>
-                        <a href="artAdmin" class="btn btn-large btn-success">
+                        <a href="artsAdmin" class="btn btn-large btn-success">
                             <i class="glyphicon glyphicon-backward"></i> &nbsp;Back to list
                         </a>
                     </td>
